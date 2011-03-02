@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*- 
-import random,md5
+import random, hashlib
 from datetime import datetime
 from settings import retornourl
 
@@ -50,7 +50,7 @@ def process(path,data):
   if path.lower()=='/security/webpagamentos/webpagto.aspx':
     titulo='Pagamento processado.'
     dump='\n'.join(sorted(['%s="%s"' % (k,'","'.join(v)) for k,v in data.iteritems()]))
-    transid=md5.new(str(random.random())).hexdigest()
+    transid=hashlib.md5(str(random.random())).hexdigest()
     prods=[i for i in data if i.startswith('item_id')]
     datamap={
       'TransacaoID':    transid,
