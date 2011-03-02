@@ -74,7 +74,7 @@ def process(path,data):
       'NumItens':       len(prods),
     }
     proddatamap={
-      'ProdId':'item_id',
+      'ProdID':'item_id',
       'ProdDescricao':'item_descr',
       'ProdQuantidade':'item_quant',
       'ProdFrete':'0,00',
